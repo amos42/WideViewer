@@ -1,0 +1,144 @@
+
+    >> TransBitmapAux.dll의 API 레퍼런스 <<
+
+
+
+
+* 변환 테이블 생성 옵션
+TRANS_OPT_SPEED		: 속도 우선
+TRANS_OPT_QUALITY	: 품질 우선
+
+TRANS_OPT_RGB24		: RGB 24비트 모드
+TRANS_OPT_YUV422	: YUV422 모드
+TRANS_OPT_YUV420	: YUV420 모드
+
+
+* 비트맵 생성 옵션
+RENDER_OPT_RGB 		: RGB 컬러
+RENDER_OPT_BGR 		: BGR 컬러
+
+
+
+* 크기 구조체
+typedef struct __SizeT {
+	int width, height;
+} SizeT;
+
+
+* 이미지 왜곡 파라미터
+typedef struct __Distortion {
+	BYTE algorithm[8];
+	float param[8];
+} Distortion;
+
+
+
+-------------------------------
+ GetRequireHandleSize
+-------------------------------
+설명 : 핸들 생성을 위해 필요로 하는 메모리 크기를 얻는다.
+
+원형 : int GetRequireHandleSize(int outWidth, int outHeight, DWORD dwTransOpt);
+ 
+리턴값 : 성공시 필요로 하는 메모리 크기 리턴, 실패시 0을 리턴.
+
+파라미터 :
+  outWidth, outHeight - 변환하여 생성될 비트맵의 크기
+  dwTransOpt - 변환 옵션
+
+
+-------------------------------
+ InitTransBitmapHandle
+-------------------------------
+설명 : 변환 핸들 초기화
+
+원형 : BOOL InitTransBitmapHandle(void *handlePtr, int outWidth, int outHeight, 
+                           int centerX, int centerY, int innerRadius, int outerRadius, 
+                           float startAngle, float sweepAngle,
+                           int srcWidth, int srcHeight,
+                           int srcStride[], int srcStrideCnt,
+			   int rowCount, int colCount, int splitWidth,
+			   DWORD dwTransOpt,
+			   Distortion *distParam);
+ 
+리턴값 : 성공시 TRUE, 실패시 FALSE
+
+파라미터 :
+  handlePtr - 변환 핸들
+  outWidth, outHeight - 변환하여 생성될 비트맵의 크기
+  centerX, centerY - 소스 이미지 상에서 변환 대상이 될 중심 좌표 
+  innerRadius - 소스 이미지 상에서 변환 대상이 될 안쪽 반지름 
+  outerRadius - 소스 이미지 상에서 변환 대상이 될 바깥쪽 반지름
+  startAngle - 변환 시작될 각도 (단위 : deg) 
+  sweepAngle - 변환시킬 크기 각도 (단위 : deg) 
+  srcWidth, srcHeight - 소스 이미지의 전체 크기 
+  srcStride - 소스 이미지의 수평 폭 bytes 배열 
+  srcStrideCnt - 소스 이미지 수평 폭 갯수
+  rowCount, colCount - 생성할 뷰의 가로/세로 갯수
+  splitWidth - 각 뷰 사이의 간격 픽셀 수
+  dwTransOpt - 변환 옵션
+  distParam - 추가적인 왜곡 변환 파라미터
+
+
+-------------------------------
+ GetSrcBitmapSize
+-------------------------------
+설명 : 소스 비트맵의 크기
+
+원형 : BOOL GetSrcBitmapSize(void *handlePtr, SizeT *size);
+ 
+리턴값 : 성공시 TRUE, 실패시 FALSE
+
+파라미터 :
+  handlePtr - 변환 핸들
+  size - 리턴 받을 소스 비트맵의 크기를 저장할 구조체
+
+
+-------------------------------
+ GetOutBitmapSize
+-------------------------------
+설명 : 출력 비트맵의 크기
+
+원형 : BOOL GetOutBitmapSize(void *handlePtr, SizeT *size);
+ 
+리턴값 : 성공시 TRUE, 실패시 FALSE
+
+파라미터 :
+  handlePtr - 변환 핸들
+  size - 리턴 받을 소스 비트맵의 크기를 저장할 구조체
+
+
+-------------------------------
+ TransBitmapByHandle0
+-------------------------------
+설명 : 변환 핸들을 통해서 변환된 비트맵을 얻는다.
+
+원형 : BOOL TransBitmapByHandle0(void *handlePtr, BYTE *outBm[], BYTE *srcBm[], UniColor clBorderColor, UniColor clBlankColor, DWORD dwRenderOpt);
+ 
+리턴값 : 성공시 TRUE, 실패시 FALSE
+
+파라미터 :
+  handlePtr - 변환 핸들
+  outBm - 출력 비트맵 배열
+  srcBm - 입력 비트맵 배열
+  clBorderColor - 외각선 컬러
+  clBlankColor - 여백 컬러
+  dwTransOpt - 변환 옵션
+
+
+-------------------------------
+ TransBitmapByHandle
+-------------------------------
+설명 : 변환 핸들을 통해서 변환된 비트맵을 얻는다.
+
+원형 : BOOL TransBitmapByHandle(void *handlePtr, BYTE outBm[], BYTE srcBm[], DWORD dwRenderOpt);
+ 
+리턴값 : 성공시 TRUE, 실패시 FALSE
+
+파라미터 :
+  handlePtr - 변환 핸들
+  outBm - 출력 비트맵
+  srcBm - 입력 비트맵
+  dwTransOpt - 변환 옵션
+
+

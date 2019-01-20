@@ -1,0 +1,263 @@
+
+    >> TransBitmapTable.dll의 API 레퍼런스 <<
+
+
+
+
+* 변환 테이블 생성 옵션
+TRANS_OPT_SPEED		: 속도 우선
+TRANS_OPT_QUALITY	: 품질 우선
+
+* 비트맵 생성 옵션
+RENDER_OPT_RGB 		: RGB 컬러
+RENDER_OPT_BGR 		: BGR 컬러
+
+
+
+* 크기 구조체
+typedef struct __SizeT {
+	int width, height;
+} SizeT;
+
+
+* float 좌표 구조체 (품질 위주 변환 테이블용)
+typedef struct __CoordF {
+	float x, y;
+} CoordF;
+
+
+* 이미지 왜곡 파라미터
+typedef struct __Distortion {
+	BYTE algorithm[8];
+	float param[8];
+} Distortion;
+
+
+
+-------------------------------
+ MakeTransTable0
+-------------------------------
+설명 : 속도 위주의 변환 테이블을 생성한다. 생성된 변환 테이블 상의 위치를 지정할 수 있다.
+
+원형 : BOOL  MakeTransTable0(int transTbl[], int outWidth, int outHeight, 
+                      int centerX, int centerY, int innerRadius, int outerRadius, 
+                      int srcWidth, int srcHeight, 
+                      double startAngle, double sweepAngle,
+		      int x, int y, int width, int height,
+		      Distortion *distParam);
+ 
+리턴값 : 성공시 TRUE, 실패시 FALSE
+
+파라미터 :
+  transTbl - 생성될 변환 테이블 배열
+  outWidth, outHeight - 생성될 변환 테이블의 전체 크기
+  centerX, centerY - 소스 이미지 상에서 변환 대상이 될 중심 좌표 
+  innerRadius - 소스 이미지 상에서 변환 대상이 될 안쪽 반지름 
+  outerRadius - 소스 이미지 상에서 변환 대상이 될 바깥쪽 반지름
+  srcWidth, srcHeight - 소스 이미지의 전체 크기 
+  startAngle - 변환 시작될 각도 (단위 : deg) 
+  sweepAngle - 변환시킬 크기 각도 (단위 : deg) 
+  x, y, width, height - 변환 테이블 상의 위치와 크기
+  distParam - 추가적인 왜곡 변환 파라미터
+
+
+-------------------------------
+ MakeTransTable
+-------------------------------
+설명 : 속도 위주의 변환 테이블을 생성한다.
+
+원형 : BOOL MakeTransTable(int transTbl[], int outWidth, int outHeight, 
+                    int centerX, int centerY, int innerRadius, int outerRadius, 
+                    int srcWidth, int srcHeight, 
+                    double startAngle, double sweepAngle,
+                    Distortion *distParam);
+ 
+리턴값 : 성공시 TRUE, 실패시 FALSE
+
+파라미터 :
+  transTbl - 생성될 변환 테이블 배열
+  outWidth, outHeight - 생성될 변환 테이블의 전체 크기
+  centerX, centerY - 소스 이미지 상에서 변환 대상이 될 중심 좌표 
+  innerRadius - 소스 이미지 상에서 변환 대상이 될 안쪽 반지름 
+  outerRadius - 소스 이미지 상에서 변환 대상이 될 바깥쪽 반지름
+  srcWidth, srcHeight - 소스 이미지의 전체 크기 
+  startAngle - 변환 시작될 각도 (단위 : deg) 
+  sweepAngle - 변환시킬 크기 각도 (단위 : deg) 
+  distParam - 추가적인 왜곡 변환 파라미터
+
+
+-------------------------------
+ MakeTransTableF0
+-------------------------------
+설명 : 품질 위주의 변환 테이블을 생성한다. 생성된 변환 테이블 상의 위치를 지정할 수 있다.
+
+원형 : BOOL  MakeTransTableF0(CoordF transTbl[], int outWidth, int outHeight, 
+                      int centerX, int centerY, int innerRadius, int outerRadius, 
+                      int srcWidth, int srcHeight, 
+                      double startAngle, double sweepAngle,
+		      int x, int y, int width, int height,
+		      Distortion *distParam);
+ 
+리턴값 : 성공시 TRUE, 실패시 FALSE
+
+파라미터 :
+  transTbl - 생성될 변환 테이블 배열
+  outWidth, outHeight - 생성될 변환 테이블의 전체 크기
+  centerX, centerY - 소스 이미지 상에서 변환 대상이 될 중심 좌표 
+  innerRadius - 소스 이미지 상에서 변환 대상이 될 안쪽 반지름 
+  outerRadius - 소스 이미지 상에서 변환 대상이 될 바깥쪽 반지름
+  srcWidth, srcHeight - 소스 이미지의 전체 크기 
+  startAngle - 변환 시작될 각도 (단위 : deg) 
+  sweepAngle - 변환시킬 크기 각도 (단위 : deg) 
+  x, y, width, height - 변환 테이블 상의 위치와 크기
+  distParam - 추가적인 왜곡 변환 파라미터
+
+
+-------------------------------
+ MakeTransTableF
+-------------------------------
+설명 : 품질 위주의 변환 테이블을 생성한다.
+
+원형 : BOOL MakeTransTableF(CoordF transTbl[], int outWidth, int outHeight, 
+                    int centerX, int centerY, int innerRadius, int outerRadius, 
+                    int srcWidth, int srcHeight, 
+                    double startAngle, double sweepAngle,
+                    Distortion *distParam);
+ 
+리턴값 : 성공시 TRUE, 실패시 FALSE
+
+파라미터 :
+  transTbl - 생성될 변환 테이블 배열
+  outWidth, outHeight - 생성될 변환 테이블의 전체 크기
+  centerX, centerY - 소스 이미지 상에서 변환 대상이 될 중심 좌표 
+  innerRadius - 소스 이미지 상에서 변환 대상이 될 안쪽 반지름 
+  outerRadius - 소스 이미지 상에서 변환 대상이 될 바깥쪽 반지름
+  srcWidth, srcHeight - 소스 이미지의 전체 크기 
+  startAngle - 변환 시작될 각도 (단위 : deg) 
+  sweepAngle - 변환시킬 크기 각도 (단위 : deg) 
+  distParam - 추가적인 왜곡 변환 파라미터
+
+
+
+-------------------------------
+ MakeTransTableMulti
+-------------------------------
+설명 : 속도 위주의 변환 테이블을 생성한다. 한 화면에 여러개를 동시에 생성한다.
+
+원형 : BOOL MakeTransTableMulti(int transTbl[], int outWidth, int outHeight, 
+                         int centerX, int centerY, int innerRadius, int outerRadius, 
+                         float startAngle, float sweepAngle,
+                         int srcWidth, int srcHeight,
+	                 int rowCount, int colCount, int splitWidth,
+			 Distortion *distParam);
+ 
+리턴값 : 성공시 TRUE, 실패시 FALSE
+
+파라미터 :
+  transTbl - 생성될 변환 테이블 배열
+  outWidth, outHeight - 생성될 변환 테이블의 전체 크기
+  centerX, centerY - 소스 이미지 상에서 변환 대상이 될 중심 좌표 
+  innerRadius - 소스 이미지 상에서 변환 대상이 될 안쪽 반지름 
+  outerRadius - 소스 이미지 상에서 변환 대상이 될 바깥쪽 반지름
+  srcWidth, srcHeight - 소스 이미지의 전체 크기 
+  startAngle - 변환 시작될 각도 (단위 : deg) 
+  sweepAngle - 변환시킬 크기 각도 (단위 : deg) 
+  rowCount, colCount - 생성할 뷰의 가로/세로 갯수
+  splitWidth - 각 뷰 사이의 간격 픽셀 수
+  distParam - 추가적인 왜곡 변환 파라미터
+
+
+-------------------------------
+ MakeTransTableMultiF
+-------------------------------
+설명 : 품질 위주의 변환 테이블을 생성한다. 한 화면에 여러개를 동시에 생성한다.
+
+원형 : BOOL MakeTransTableMultiF(CoordF transTbl[], int outWidth, int outHeight, 
+                         int centerX, int centerY, int innerRadius, int outerRadius, 
+                         float startAngle, float sweepAngle,
+                         int srcWidth, int srcHeight,
+	                 int rowCount, int colCount, int splitWidth,
+			 Distortion *distParam);
+ 
+리턴값 : 성공시 TRUE, 실패시 FALSE
+
+파라미터 :
+  transTbl - 생성될 변환 테이블 배열
+  outWidth, outHeight - 생성될 변환 테이블의 전체 크기
+  centerX, centerY - 소스 이미지 상에서 변환 대상이 될 중심 좌표 
+  innerRadius - 소스 이미지 상에서 변환 대상이 될 안쪽 반지름 
+  outerRadius - 소스 이미지 상에서 변환 대상이 될 바깥쪽 반지름
+  srcWidth, srcHeight - 소스 이미지의 전체 크기 
+  startAngle - 변환 시작될 각도 (단위 : deg) 
+  sweepAngle - 변환시킬 크기 각도 (단위 : deg) 
+  rowCount, colCount - 생성할 뷰의 가로/세로 갯수
+  splitWidth - 각 뷰 사이의 간격 픽셀 수
+  distParam - 추가적인 왜곡 변환 파라미터
+
+
+-------------------------------
+ MakeBitmap
+-------------------------------
+설명 : 속도 위주의 변환 테이블을 이용해 비트맵 변환을 한다.
+
+원형 : BOOL MakeBitmap(int transTbl[], BYTE outBm[], int outWidth, int outHeight, 
+                       BYTE srcBm[], int srcWidth, int srcHeight, 
+                       DWORD dwTransOpt);
+ 
+리턴값 : 성공시 TRUE, 실패시 FALSE
+
+파라미터 :
+  transTbl - 생성될 변환 테이블 배열
+  outBm - 출력 비트맵 배열
+  outWidth, outHeight - 생성될 비트맵의 크기
+  srcBm - 소스 비트맵 배열
+  srcWidth, srcHeight - 소스 이미지의 전체 크기 
+  dwTransOpt - 변환 옵션
+
+
+-------------------------------
+ MakeBitmapF
+-------------------------------
+설명 : 품질 위주의 변환 테이블을 이용해 비트맵 변환을 한다.
+
+원형 : BOOL MakeBitmapF(CoordF transTbl[], BYTE outBm[], int outWidth, int outHeight, 
+                       BYTE srcBm[], int srcWidth, int srcHeight, 
+                       DWORD dwTransOpt);
+ 
+리턴값 : 성공시 TRUE, 실패시 FALSE
+
+파라미터 :
+  transTbl - 생성될 변환 테이블 배열
+  outBm - 출력 비트맵 배열
+  outWidth, outHeight - 생성될 비트맵의 크기
+  srcBm - 소스 비트맵 배열
+  srcWidth, srcHeight - 소스 이미지의 전체 크기 
+  dwTransOpt - 변환 옵션
+
+
+-------------------------------
+ TransBitmap
+-------------------------------
+설명 : 비트맵을 변환시킨다.
+
+원형 : BOOL TransBitmap(BYTE outBm[], int outWidth, int outHeight, 
+                 int centerX, int centerY, int innerRadius, int outerRadius, 
+                 double startAngle, double sweepAngle,
+                 BYTE srcBm[], int srcWidth, int srcHeight,
+	         DWORD dwTransRenderOpt, 
+		 Distortion *distParam);
+ 
+리턴값 : 성공시 TRUE, 실패시 FALSE
+
+파라미터 :
+  outBm - 출력 비트맵 배열
+  outWidth, outHeight - 생성될 비트맵의 크기
+  centerX, centerY - 소스 이미지 상에서 변환 대상이 될 중심 좌표 
+  innerRadius - 소스 이미지 상에서 변환 대상이 될 안쪽 반지름 
+  outerRadius - 소스 이미지 상에서 변환 대상이 될 바깥쪽 반지름
+  startAngle - 변환 시작될 각도 (단위 : deg) 
+  sweepAngle - 변환시킬 크기 각도 (단위 : deg) 
+  srcBm - 소스 비트맵 배열
+  srcWidth, srcHeight - 소스 이미지의 전체 크기 
+  dwTransOpt - 변환 옵션
+  distParam - 추가적인 왜곡 변환 파라미터
