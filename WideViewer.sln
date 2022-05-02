@@ -1,9 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.271
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WideViewer", "WideViewer\WideViewer.csproj", "{69A60C58-912D-4BEF-A153-F524C43CA900}"
 	ProjectSection(ProjectDependencies) = postProject
 		{107C9763-5957-4AFE-88EC-A8CBF3A84FDA} = {107C9763-5957-4AFE-88EC-A8CBF3A84FDA}
+		{2521C5D4-AD1C-416F-88A8-1F51A942A8D1} = {2521C5D4-AD1C-416F-88A8-1F51A942A8D1}
+		{2521C5D4-AD1C-416F-88A8-1F51A942A8D2} = {2521C5D4-AD1C-416F-88A8-1F51A942A8D2}
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PicViewerCtrl", "PicViewerCtrl\PicViewerCtrl.csproj", "{107C9763-5957-4AFE-88EC-A8CBF3A84FDA}"
@@ -26,6 +30,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TransBitmapTableCS", "TransBitmapTableCS\TransBitmapTableCS.csproj", "{AF888987-DBE4-460B-BF1E-494E46F07EF9}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DistorDrawTest", "DistorDrawTest\DistorDrawTest.csproj", "{94066D43-EAE7-435A-B552-4454AE4F643A}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CalcLens", "CalcLens\CalcLens.vcxproj", "{DA85AAA6-1F7A-4B24-81AF-DE7F2EBEDA05}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -139,8 +145,25 @@ Global
 		{94066D43-EAE7-435A-B552-4454AE4F643A}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{94066D43-EAE7-435A-B552-4454AE4F643A}.Release|Win32.ActiveCfg = Release|Any CPU
 		{94066D43-EAE7-435A-B552-4454AE4F643A}.Release|x86.ActiveCfg = Release|Any CPU
+		{DA85AAA6-1F7A-4B24-81AF-DE7F2EBEDA05}.Debug|Any CPU.ActiveCfg = Debug|Win32
+		{DA85AAA6-1F7A-4B24-81AF-DE7F2EBEDA05}.Debug|Mixed Platforms.ActiveCfg = Debug|Win32
+		{DA85AAA6-1F7A-4B24-81AF-DE7F2EBEDA05}.Debug|Mixed Platforms.Build.0 = Debug|Win32
+		{DA85AAA6-1F7A-4B24-81AF-DE7F2EBEDA05}.Debug|Win32.ActiveCfg = Debug|Win32
+		{DA85AAA6-1F7A-4B24-81AF-DE7F2EBEDA05}.Debug|Win32.Build.0 = Debug|Win32
+		{DA85AAA6-1F7A-4B24-81AF-DE7F2EBEDA05}.Debug|x86.ActiveCfg = Debug|Win32
+		{DA85AAA6-1F7A-4B24-81AF-DE7F2EBEDA05}.Debug|x86.Build.0 = Debug|Win32
+		{DA85AAA6-1F7A-4B24-81AF-DE7F2EBEDA05}.Release|Any CPU.ActiveCfg = Release|Win32
+		{DA85AAA6-1F7A-4B24-81AF-DE7F2EBEDA05}.Release|Mixed Platforms.ActiveCfg = Release|Win32
+		{DA85AAA6-1F7A-4B24-81AF-DE7F2EBEDA05}.Release|Mixed Platforms.Build.0 = Release|Win32
+		{DA85AAA6-1F7A-4B24-81AF-DE7F2EBEDA05}.Release|Win32.ActiveCfg = Release|Win32
+		{DA85AAA6-1F7A-4B24-81AF-DE7F2EBEDA05}.Release|Win32.Build.0 = Release|Win32
+		{DA85AAA6-1F7A-4B24-81AF-DE7F2EBEDA05}.Release|x86.ActiveCfg = Release|Win32
+		{DA85AAA6-1F7A-4B24-81AF-DE7F2EBEDA05}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A45A889C-9B5B-4353-BEE0-EA13A1CA2C98}
 	EndGlobalSection
 EndGlobal
