@@ -1,16 +1,16 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.271
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32413.511
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WideViewer", "WideViewer\WideViewer.csproj", "{69A60C58-912D-4BEF-A153-F524C43CA900}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WideViewer", "WideViewer\WideViewer.csproj", "{69A60C58-912D-4BEF-A153-F524C43CA900}"
 	ProjectSection(ProjectDependencies) = postProject
 		{107C9763-5957-4AFE-88EC-A8CBF3A84FDA} = {107C9763-5957-4AFE-88EC-A8CBF3A84FDA}
 		{2521C5D4-AD1C-416F-88A8-1F51A942A8D1} = {2521C5D4-AD1C-416F-88A8-1F51A942A8D1}
 		{2521C5D4-AD1C-416F-88A8-1F51A942A8D2} = {2521C5D4-AD1C-416F-88A8-1F51A942A8D2}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PicViewerCtrl", "PicViewerCtrl\PicViewerCtrl.csproj", "{107C9763-5957-4AFE-88EC-A8CBF3A84FDA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PicViewerCtrl", "PicViewerCtrl\PicViewerCtrl.csproj", "{107C9763-5957-4AFE-88EC-A8CBF3A84FDA}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TransBitmapTable", "TransBitmapTable\TransBitmapTable.vcxproj", "{2521C5D4-AD1C-416F-88A8-1F51A942A8D1}"
 EndProject
@@ -20,16 +20,16 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TransBitmapTest", "TransBit
 		{2521C5D4-AD1C-416F-88A8-1F51A942A8D2} = {2521C5D4-AD1C-416F-88A8-1F51A942A8D2}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DistortTest", "DistortTest\DistortTest.csproj", "{1D38CC88-FF08-478B-9534-D8AB40490914}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DistortTest", "DistortTest\DistortTest.csproj", "{1D38CC88-FF08-478B-9534-D8AB40490914}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TransBitmapAux", "TransBitmapAux\TransBitmapAux.vcxproj", "{2521C5D4-AD1C-416F-88A8-1F51A942A8D2}"
 	ProjectSection(ProjectDependencies) = postProject
 		{2521C5D4-AD1C-416F-88A8-1F51A942A8D1} = {2521C5D4-AD1C-416F-88A8-1F51A942A8D1}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TransBitmapTableCS", "TransBitmapTableCS\TransBitmapTableCS.csproj", "{AF888987-DBE4-460B-BF1E-494E46F07EF9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TransBitmapTableCS", "TransBitmapTableCS\TransBitmapTableCS.csproj", "{AF888987-DBE4-460B-BF1E-494E46F07EF9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DistorDrawTest", "DistorDrawTest\DistorDrawTest.csproj", "{94066D43-EAE7-435A-B552-4454AE4F643A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DistorDrawTest", "DistorDrawTest\DistorDrawTest.csproj", "{94066D43-EAE7-435A-B552-4454AE4F643A}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CalcLens", "CalcLens\CalcLens.vcxproj", "{DA85AAA6-1F7A-4B24-81AF-DE7F2EBEDA05}"
 EndProject
@@ -49,8 +49,8 @@ Global
 		{69A60C58-912D-4BEF-A153-F524C43CA900}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{69A60C58-912D-4BEF-A153-F524C43CA900}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
 		{69A60C58-912D-4BEF-A153-F524C43CA900}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
-		{69A60C58-912D-4BEF-A153-F524C43CA900}.Debug|Win32.ActiveCfg = Debug|x86
-		{69A60C58-912D-4BEF-A153-F524C43CA900}.Debug|Win32.Build.0 = Debug|x86
+		{69A60C58-912D-4BEF-A153-F524C43CA900}.Debug|Win32.ActiveCfg = Debug|Any CPU
+		{69A60C58-912D-4BEF-A153-F524C43CA900}.Debug|Win32.Build.0 = Debug|Any CPU
 		{69A60C58-912D-4BEF-A153-F524C43CA900}.Debug|x86.ActiveCfg = Debug|x86
 		{69A60C58-912D-4BEF-A153-F524C43CA900}.Debug|x86.Build.0 = Debug|x86
 		{69A60C58-912D-4BEF-A153-F524C43CA900}.Release|Any CPU.ActiveCfg = Release|Any CPU
